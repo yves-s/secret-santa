@@ -1,0 +1,38 @@
+{
+  "name": "secret-santa",
+  "version": "0.1.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "webpack-dev-server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/yves-s/secret-santa.git"
+  },
+  "keywords": [
+    "react",
+    "secret-santa"
+  ],
+  "author": "Yves Schleich",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/yves-s/secret-santa/issues"
+  },
+  "homepage": "https://github.com/yves-s/secret-santa#readme",
+  "dependencies": {
+    "react": "^15.3.2",
+    "react-dom": "^15.3.2"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.16.0",
+    "babel-core": "^6.17.0",
+    "babel-loader": "^6.2.5",
+    "babel-preset-es2015": "^6.16.0",
+    "babel-preset-react": "^6.16.0",
+    "html-webpack-plugin": "^2.24.0",
+    "webpack": "^1.13.2",
+    "webpack-dev-server": "^1.16.2"
+  }
+}
