@@ -1,9 +1,13 @@
 import React, {Component} from 'react';
 
+import {ControlCenter} from './container';
+
 class App extends Component {
     render() {
         return (
-            <div>Hello</div>
+            <div>
+                <ControlCenter />
+            </div>
         );
     }
 }
