@@ -32,14 +32,40 @@ module.exports = {
                 }
             },
             {
-                test: /(\.scss|\.css)$/,
+                test: /\.scss$/,
                 loader: ExtractTextPlugin.extract('style', 'css?sourceMap&modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]!postcss!sass')
+            },
+            {
+                test: /\.css$/,
+                loader: 'style!css!postcss'
+            },
+            // Font Definitions
+            {
+                test: /\.(woff|woff2)(\?v=\d+\.\d+\.\d+)?$/,
+                loader: 'url?limit=10000&mimetype=application/font-woff'
+            },
+            {
+                test: /\.ttf(\?v=\d+\.\d+\.\d+)?$/,
+                loader: 'url?limit=10000&mimetype=application/octet-stream'
+            },
+            {
+                test: /\.eot(\?v=\d+\.\d+\.\d+)?$/,
+                loader: 'file'
+            },
+            {
+                test: /\.svg(\?v=\d+\.\d+\.\d+)?$/,
+                loader: 'url?limit=10000&mimetype=image/svg+xml'
             }
         ]
     },
     postcss: [autoprefixer],
     plugins: [
-        new ExtractTextPlugin('bundle.css', { allChunks: true }),
+        new ExtractTextPlugin(
+            'bundle.css',
+            {
+                allChunks: true
+            }
+        ),
         // Generates an `index.html` file with the <script> injected.
         new HtmlWebpackPlugin({
             inject: true,
