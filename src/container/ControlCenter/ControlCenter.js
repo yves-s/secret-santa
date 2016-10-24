@@ -5,6 +5,7 @@ import {Grid} from 'react-bootstrap';
 import AppBar from 'react-toolbox/lib/app_bar';
 import {SecretSantaCreator} from '../SecretSantaCreator/SecretSantaCreator'
 import {Sender} from '../Sender/Sender';
+import {SecretSantas} from '../SecretSantas/SecretSantas';
 
 export class ControlCenter extends Component {
     render() {
@@ -15,6 +16,7 @@ export class ControlCenter extends Component {
                 <Grid>
                     <Sender />
                     <SecretSantaCreator />
+                    <SecretSantas />
                 </Grid>
             </div>
         );

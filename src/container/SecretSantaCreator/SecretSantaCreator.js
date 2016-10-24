@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
+import {Row, Col} from 'react-bootstrap';
 
 import Input from 'react-toolbox/lib/input';
 import Button from 'react-toolbox/lib/button';
-import {Row, Col} from 'react-bootstrap';
 
 export class SecretSantaCreator extends Component {
     constructor() {
