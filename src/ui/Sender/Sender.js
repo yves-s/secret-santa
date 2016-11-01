@@ -4,10 +4,6 @@ import Input from 'react-toolbox/lib/input';
 import {Row, Col} from 'react-bootstrap';
 
 export class Sender extends Component {
-    constructor() {
-        super();
-    }
-
     render() {
         return(
             <div>

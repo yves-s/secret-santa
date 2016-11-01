@@ -5,14 +5,6 @@ import Input from 'react-toolbox/lib/input';
 import Button from 'react-toolbox/lib/button';
 
 export class SecretSantaCreator extends Component {
-    constructor() {
-        super();
-    }
-
-    addSecretSanta() {
-
-    }
-
     render() {
         return (
             <Row className="show-grid">

@@ -3,8 +3,7 @@ import React, {Component} from 'react';
 import {Grid} from 'react-bootstrap';
 
 import AppBar from 'react-toolbox/lib/app_bar';
-import {SecretSantaCreator} from '../SecretSantaCreator/SecretSantaCreator'
-import {Sender} from '../Sender/Sender';
+import {SecretSantaCreator, Sender} from '../../ui'
 import {SecretSantas} from '../SecretSantas/SecretSantas';
 
 export class ControlCenter extends Component {
