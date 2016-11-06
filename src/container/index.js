@@ -1,2 +1,7 @@
-export {ControlCenter} from './ControlCenter/ControlCenter';
-export {SecretSantas} from './SecretSantas/SecretSantas';
+import ControlCenter from './ControlCenter/ControlCenter';
+import SecretSantas from './SecretSantas/SecretSantas';
+
+export {
+    ControlCenter,
+    SecretSantas
+}

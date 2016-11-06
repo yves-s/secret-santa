@@ -4,9 +4,9 @@ import {Grid} from 'react-bootstrap';
 
 import AppBar from 'react-toolbox/lib/app_bar';
 import {SecretSantaCreator, Sender} from '../../ui'
-import {SecretSantas} from '../SecretSantas/SecretSantas';
+import SecretSantas from '../SecretSantas/SecretSantas';
 
-export class ControlCenter extends Component {
+class ControlCenter extends Component {
     render() {
         return(
             <div>
@@ -21,3 +21,5 @@ export class ControlCenter extends Component {
         );
     }
 }
+
+export default ControlCenter;
