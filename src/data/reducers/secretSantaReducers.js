@@ -5,6 +5,8 @@ export default (state = [], action) => {
                 ...state,
                 Object.assign({}, action.secretSanta)
             ];
+        case 'UPDATE_SECRET_SANTA':
+            return state;
         default:
             return state;
     }

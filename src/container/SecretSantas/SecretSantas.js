@@ -11,11 +11,23 @@ class SecretSantas extends Component {
         super(props);
     }
 
+    updateSecretSanta(input) {
+        this.props.updateSecretSanta(input);
+        console.log('Updated Secret Santa', input);
+    }
+
     render() {
         return(
             <Row>
                 {this.props.secretSantas.map(function(secretSanta) {
-                    return <SecretSanta key={secretSanta.id} name={secretSanta.name} email={secretSanta.email} />
+                    return `
+                        <SecretSanta
+                            key={secretSanta.id}
+                            name={secretSanta.name}
+                            email={secretSanta.email}
+                            update={this.updateSecretSanta}
+                        />
+                    `
                 })}
             </Row>
         );
@@ -36,7 +48,7 @@ const mapDispatchToProps = (dispatch) => {
     console.log('mapDispatchToProps', dispatch);
     return {
         // You can now say this.props.createBook
-        createSecretSanta: book => dispatch(secretSantaActions.createSecretSanta(secretSanta))
+        updateSecretSanta: book => dispatch(secretSantaActions.updateSecretSanta(secretSanta))
     };
 };
 
