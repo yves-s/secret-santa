@@ -12,22 +12,22 @@ class SecretSantas extends Component {
     }
 
     updateSecretSanta(input) {
-        this.props.updateSecretSanta(input);
         console.log('Updated Secret Santa', input);
+        this.props.updateSecretSanta(input);
     }
 
     render() {
         return(
             <Row>
-                {this.props.secretSantas.map(function(secretSanta) {
-                    return `
+                {this.props.secretSantas.map((secretSanta, index) => {
+                    console.log(secretSanta);
+                    return (
                         <SecretSanta
-                            key={secretSanta.id}
+                            key={index}
                             name={secretSanta.name}
                             email={secretSanta.email}
-                            update={this.updateSecretSanta}
                         />
-                    `
+                    )
                 })}
             </Row>
         );
@@ -36,7 +36,6 @@ class SecretSantas extends Component {
 
 // Maps state from store to props
 const mapStateToProps = (state) => {
-    console.log('mapStateToProps', state);
     return {
         // You can now say this.props.books
         secretSantas: state.secretSantas
@@ -45,10 +44,9 @@ const mapStateToProps = (state) => {
 
 // Maps actions to props
 const mapDispatchToProps = (dispatch) => {
-    console.log('mapDispatchToProps', dispatch);
     return {
         // You can now say this.props.createBook
-        updateSecretSanta: book => dispatch(secretSantaActions.updateSecretSanta(secretSanta))
+        updateSecretSanta: secretSanta => dispatch(secretSantaActions.updateSecretSanta(secretSanta))
     };
 };
 
