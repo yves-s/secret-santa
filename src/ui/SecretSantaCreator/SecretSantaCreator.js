@@ -9,6 +9,7 @@ export const SecretSantaCreator = (props) => {
         name: '',
         email: ''
     };
+    let inputName;
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -24,7 +25,7 @@ export const SecretSantaCreator = (props) => {
         <form  onSubmit={handleSubmit}>
             <Row className="show-grid">
                 <Col xs={12} sm={5}>
-                    <Input type='text' label='Name' name='name' onChange={handleChange.bind(this, 'name')} />
+                    <Input type='text' label='Name' name='name' onChange={handleChange.bind(this, 'name')} ref={(node) => inputName = node}/>
                 </Col>
                 <Col xs={12} sm={5}>
                     <Input type='email' label='E-Mail' name='email' onChange={handleChange.bind(this, 'email')} />

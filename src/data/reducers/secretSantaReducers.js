@@ -7,6 +7,11 @@ export default (state = [], action) => {
             ];
         case 'UPDATE_SECRET_SANTA':
             return state;
+        case 'DELETE_SECRET_SANTA':
+            return [
+                ...state.slice(0, action.id),
+                ...state.slice(action.id + 1)
+            ];
         default:
             return state;
     }

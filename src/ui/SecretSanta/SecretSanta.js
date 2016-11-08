@@ -4,6 +4,10 @@ import {Button} from 'react-toolbox/lib/button';
 import {Col} from 'react-bootstrap';
 
 export const SecretSanta = (props) => {
+    const onDelete = () => {
+      props.delete(props.id);
+    };
+
     return (
         <Col xs={6} sm={4}>
             <Card>
@@ -13,8 +17,14 @@ export const SecretSanta = (props) => {
                     subtitle={props.email}
                 />
                 <CardActions>
-                    <Button label="Action 1" />
-                    <Button label="Action 2" />
+                    <Button icon='add' label='Edit' flat primary />
+                    <Button
+                        icon='add'
+                        label='Delete'
+                        flat
+                        primary
+                        onClick={onDelete}
+                    />
                 </CardActions>
             </Card>
         </Col>
