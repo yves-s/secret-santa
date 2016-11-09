@@ -17,7 +17,12 @@ export const SecretSanta = (props) => {
                     subtitle={props.email}
                 />
                 <CardActions>
-                    <Button icon='add' label='Edit' flat primary />
+                    <Button
+                        icon='add'
+                        label='Edit'
+                        flat
+                        primary
+                    />
                     <Button
                         icon='add'
                         label='Delete'

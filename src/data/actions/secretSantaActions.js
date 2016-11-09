@@ -5,9 +5,10 @@ export const createSecretSanta = (secretSanta) => {
     }
 };
 
-export const  updateSecretSanta = () => {
+export const  updateSecretSanta = (secretSanta) => {
     return {
-        type: 'UPDATE_SECRET_SANTA'
+        type: 'UPDATE_SECRET_SANTA',
+        secretSanta: secretSanta
     }
 };
 
@@ -16,4 +17,11 @@ export const deleteSecretSanta = (id) => {
         type: 'DELETE_SECRET_SANTA',
         id: id
     }
-}
+};
+
+export const toggleEditingSecretSanta = (id) => {
+    return {
+        type: 'TOGGLE_EDITING_SECRET_SANTA',
+        id: id
+    }
+};
