@@ -1,27 +1,29 @@
+import {ACTIONS_SECRET_SANTA} from '../../config/actionConstants';
+
 export const createSecretSanta = (secretSanta) => {
     return {
-        type: 'CREATE_SECRET_SANTA',
+        type: ACTIONS_SECRET_SANTA.CREATE,
         secretSanta: secretSanta
     }
 };
 
 export const  updateSecretSanta = (secretSanta) => {
     return {
-        type: 'UPDATE_SECRET_SANTA',
+        type: ACTIONS_SECRET_SANTA.UPDATE,
         secretSanta: secretSanta
     }
 };
 
 export const deleteSecretSanta = (id) => {
     return {
-        type: 'DELETE_SECRET_SANTA',
+        type: ACTIONS_SECRET_SANTA.DELETE,
         id: id
     }
 };
 
-export const toggleEditingSecretSanta = (id) => {
+export const toggleEditSecretSanta = (id) => {
     return {
-        type: 'TOGGLE_EDITING_SECRET_SANTA',
+        type: ACTIONS_SECRET_SANTA.TOGGLE_EDIT,
         id: id
     }
 };

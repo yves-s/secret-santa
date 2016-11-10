@@ -11,15 +11,6 @@ class SecretSantas extends Component {
         super(props);
     }
 
-    updateSecretSanta(input) {
-        console.log('Updated Secret Santa', input);
-        this.props.updateSecretSanta(input);
-    }
-
-    deleteSecretSanta(id) {
-        this.props.deleteSecretSanta(id);
-    }
-
     render() {
         return(
             <Row>
@@ -30,7 +21,8 @@ class SecretSantas extends Component {
                             id={index}
                             name={secretSanta.name}
                             email={secretSanta.email}
-                            delete={this.deleteSecretSanta.bind(this)}
+                            delete={this.props.deleteSecretSanta}
+                            toggleEdit={this.props.toggleEditSecretSanta}
                         />
                     )
                 })}
@@ -52,7 +44,8 @@ const mapDispatchToProps = (dispatch) => {
     return {
         // You can now say this.props.createBook
         updateSecretSanta: secretSanta => dispatch(secretSantaActions.updateSecretSanta(secretSanta)),
-        deleteSecretSanta: id => dispatch(secretSantaActions.deleteSecretSanta(id))
+        deleteSecretSanta: id => dispatch(secretSantaActions.deleteSecretSanta(id)),
+        toggleEditSecretSanta: id => dispatch(secretSantaActions.toggleEditSecretSanta(id))
     };
 };
 

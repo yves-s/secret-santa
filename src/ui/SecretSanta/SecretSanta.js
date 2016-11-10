@@ -5,7 +5,15 @@ import {Col} from 'react-bootstrap';
 
 export const SecretSanta = (props) => {
     const onDelete = () => {
-      props.delete(props.id);
+        props.delete(props.id);
+    };
+
+    const onEdit = () => {
+
+    };
+
+    const toggleEdit = () => {
+        props.toggleEdit(props.id);
     };
 
     return (
@@ -17,12 +25,13 @@ export const SecretSanta = (props) => {
                     subtitle={props.email}
                 />
                 <CardActions>
-                    <Button
-                        icon='add'
-                        label='Edit'
-                        flat
-                        primary
-                    />
+                    {/*<Button*/}
+                        {/*icon='add'*/}
+                        {/*label='Edit'*/}
+                        {/*flat*/}
+                        {/*primary*/}
+                        {/*onClick={toggleEdit}*/}
+                    {/*/>*/}
                     <Button
                         icon='add'
                         label='Delete'
