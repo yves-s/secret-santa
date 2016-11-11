@@ -1,0 +1,11 @@
+.cardTitle {
+  div:last-child {
+    max-width: 100%;
+    
+    p {
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      overflow: hidden;
+    }
+  }
+}

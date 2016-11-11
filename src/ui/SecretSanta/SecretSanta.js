@@ -3,14 +3,14 @@ import {Card, CardTitle, CardActions} from 'react-toolbox/lib/card';
 import {Button} from 'react-toolbox/lib/button';
 import {Col} from 'react-bootstrap';
 
+import theme from './CardTitle.scss';
+
 export const SecretSanta = (props) => {
     const onDelete = () => {
         props.delete(props.id);
     };
 
-    const onEdit = () => {
-
-    };
+    const onEdit = () => {};
 
     const toggleEdit = () => {
         props.toggleEdit(props.id);
@@ -20,7 +20,7 @@ export const SecretSanta = (props) => {
         <Col xs={6} sm={4}>
             <Card>
                 <CardTitle
-                    avatar="https://placeimg.com/80/80/animals"
+                    theme={theme}
                     title={props.name}
                     subtitle={props.email}
                 />
@@ -33,10 +33,9 @@ export const SecretSanta = (props) => {
                         {/*onClick={toggleEdit}*/}
                     {/*/>*/}
                     <Button
-                        icon='add'
+                        icon='delete forever'
                         label='Delete'
-                        flat
-                        primary
+                        accent
                         onClick={onDelete}
                     />
                 </CardActions>

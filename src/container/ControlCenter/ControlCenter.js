@@ -2,8 +2,9 @@ import React, {Component} from 'react';
 import {connect} from 'react-redux';
 
 import {Grid} from 'react-bootstrap';
-
 import AppBar from 'react-toolbox/lib/app_bar';
+import {Button} from 'react-toolbox/lib/button';
+
 import {SecretSantaCreator, Sender} from '../../ui'
 import SecretSantas from '../SecretSantas/SecretSantas';
 
@@ -22,6 +23,7 @@ class ControlCenter extends Component {
         return(
             <div>
                 <AppBar flat title="Secret Santa Control Center">
+                    <Button icon='send' floating accent/>
                 </AppBar>
                 <Grid>
                     <Sender />
