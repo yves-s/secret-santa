@@ -1,7 +1,6 @@
 import {ACTIONS_SECRET_SANTA} from '../../config/actionConstants';
 
 export default (state = [], action) => {
-    console.log('Reducer', state, action);
     switch (action.type) {
         case ACTIONS_SECRET_SANTA.CREATE:
             return [

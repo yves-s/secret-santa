@@ -27,7 +27,7 @@ class ControlCenter extends Component {
                 </AppBar>
                 <Grid>
                     <Sender />
-                    <SecretSantaCreator create={this.submitSecretSanta.bind(this)} />
+                    <SecretSantaCreator onSubmit={this.submitSecretSanta.bind(this)} />
                     <SecretSantas />
                 </Grid>
             </div>

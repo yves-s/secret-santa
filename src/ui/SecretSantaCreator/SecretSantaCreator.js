@@ -1,39 +1,57 @@
 import React from 'react';
-import {Row, Col} from 'react-bootstrap';
 
+import {Row, Col} from 'react-bootstrap';
+import {Field, reduxForm} from 'redux-form';
 import Input from 'react-toolbox/lib/input';
 import Button from 'react-toolbox/lib/button';
 
-export const SecretSantaCreator = (props) => {
-    let input = {
-        name: '',
-        email: ''
-    };
-    let inputName;
+const validate = values => {
+    const errors = {};
+    const requiredFields = ['name', 'email'];
+    requiredFields.forEach(field => {
+        if (!values[ field ]) {
+            errors[ field ] = 'Required'
+        }
+    });
+    if (values.email && !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(values.email)) {
+        errors.email = 'Invalid email address'
+    }
+    return errors
+};
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        props.create(input);
-        e.target.reset();
-    };
+const renderInput = ({ input, label, meta: { touched, error }, children, ...custom }) => (
+    <div style={{wordWrap: 'break-word'}}>
+        <Input
+            label={label}
+            {...input}
+        />
+        Touched: {touched} Error: {error}
+    </div>
+);
 
-    const handleChange = (name, e) => {
-        input[name] = e;
-    };
+const SecretSantaCreator = (props) => {
+    const { invalid, handleSubmit, submitting } = props;
 
     return (
-        <form  onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit}>
             <Row className="show-grid">
                 <Col xs={12} sm={5}>
-                    <Input type='text' label='Name' name='name' onChange={handleChange.bind(this, 'name')} ref={(node) => inputName = node}/>
+                    <Field component={renderInput} name='name' label="Name" />
                 </Col>
                 <Col xs={12} sm={5}>
-                    <Input type='email' label='E-Mail' name='email' onChange={handleChange.bind(this, 'email')} />
+                    <Field component={renderInput} name='email' label="E-Mail" />
+                    {/*<Input label='E-Mail' name='email' onChange={handleChange.bind(this, 'email')} />*/}
                 </Col>
                 <Col xs={12} sm={2}>
-                    <Button icon='add' floating />
+                    <Button disabled={invalid || submitting} icon='add' floating />
                 </Col>
             </Row>
         </form>
     );
+
 };
+
+export default reduxForm({
+    form: 'secretSantaCreator',
+    validate
+})(SecretSantaCreator);

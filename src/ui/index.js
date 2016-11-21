@@ -1,3 +1,9 @@
-export {SecretSanta} from './SecretSanta/SecretSanta';
-export {SecretSantaCreator} from './SecretSantaCreator/SecretSantaCreator';
-export {Sender} from './Sender/Sender';
+import {SecretSanta} from './SecretSanta/SecretSanta';
+import SecretSantaCreator from './SecretSantaCreator/SecretSantaCreator';
+import {Sender} from './Sender/Sender';
+
+export {
+    SecretSantaCreator,
+    SecretSanta,
+    Sender
+}

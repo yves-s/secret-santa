@@ -31,18 +31,14 @@ class SecretSantas extends Component {
     }
 }
 
-// Maps state from store to props
 const mapStateToProps = (state) => {
     return {
-        // You can now say this.props.books
         secretSantas: state.secretSantas
     };
 };
 
-// Maps actions to props
 const mapDispatchToProps = (dispatch) => {
     return {
-        // You can now say this.props.createBook
         updateSecretSanta: secretSanta => dispatch(secretSantaActions.updateSecretSanta(secretSanta)),
         deleteSecretSanta: id => dispatch(secretSantaActions.deleteSecretSanta(id)),
         toggleEditSecretSanta: id => dispatch(secretSantaActions.toggleEditSecretSanta(id))
