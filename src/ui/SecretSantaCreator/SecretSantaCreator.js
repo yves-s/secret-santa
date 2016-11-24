@@ -25,22 +25,25 @@ const renderInput = ({ input, label, meta: { touched, error }, children, ...cust
             label={label}
             {...input}
         />
-        Touched: {touched} Error: {error}
     </div>
 );
 
 const SecretSantaCreator = (props) => {
-    const { invalid, handleSubmit, submitting } = props;
+    const { invalid, handleSubmit, submitting, reset } = props;
+
+    const submit = (data) => {
+        handleSubmit(data);
+        reset();
+    };
 
     return (
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={submit}>
             <Row className="show-grid">
                 <Col xs={12} sm={5}>
                     <Field component={renderInput} name='name' label="Name" />
                 </Col>
                 <Col xs={12} sm={5}>
                     <Field component={renderInput} name='email' label="E-Mail" />
-                    {/*<Input label='E-Mail' name='email' onChange={handleChange.bind(this, 'email')} />*/}
                 </Col>
                 <Col xs={12} sm={2}>
                     <Button disabled={invalid || submitting} icon='add' floating />
