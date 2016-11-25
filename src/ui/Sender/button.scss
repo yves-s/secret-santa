@@ -3,3 +3,7 @@
   top: 35px;
   right: 35px;
 }
+
+button[disabled] {
+  background-color: rgb(225, 225, 225)!important;
+}

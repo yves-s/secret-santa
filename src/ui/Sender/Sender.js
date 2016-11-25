@@ -21,11 +21,12 @@ const validate = values => {
     return errors
 };
 
-const renderInput = ({ input, label, meta: { touched, error }, children, ...custom }) => (
+const renderInput = ({input, label, meta: {touched, error}, ...custom}) => (
     <div style={{wordWrap: 'break-word'}}>
         <Input
             label={label}
             {...input}
+            {...custom}
         />
     </div>
 );
@@ -41,7 +42,7 @@ const Sender = (props) => {
         <div>
             <Row>
                 <Col xs={12}>
-                    <h2><smal>Absender</smal></h2>
+                    <h2><small>Absender</small></h2>
                 </Col>
             </Row>
             <form onSubmit={submit}>
