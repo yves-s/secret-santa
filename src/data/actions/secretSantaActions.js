@@ -27,3 +27,10 @@ export const toggleEditSecretSanta = (id) => {
         id: id
     }
 };
+
+export const sendSecretSantas = (sender) => {
+    return {
+        type: ACTIONS_SECRET_SANTA.SEND,
+        sender: sender
+    }
+};

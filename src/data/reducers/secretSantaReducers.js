@@ -43,6 +43,8 @@ export default (state = [], action) => {
                     editing: !secretSanta.editing
                 };
             });
+        case ACTIONS_SECRET_SANTA.SEND_SUCCESS:
+            return action.data;
         default:
             return state;
     }
