@@ -9,7 +9,7 @@ import button from './button.scss';
 
 const validate = values => {
     const errors = {};
-    const requiredFields = ['name', 'email', 'message'];
+    const requiredFields = ['name', 'email'];
     requiredFields.forEach(field => {
         if (!values[ field ]) {
             errors[ field ] = 'Required'

@@ -4,10 +4,10 @@ import {connect} from 'react-redux';
 import {Grid} from 'react-bootstrap';
 import AppBar from 'react-toolbox/lib/app_bar';
 
-import {SecretSantaCreator, Sender} from '../../ui'
-import SecretSantas from '../SecretSantas/SecretSantas';
+import {SecretSantaCreator, Sender} from 'ui'
+import SecretSantas from 'container/SecretSantas/SecretSantas';
 
-import {secretSantaActions} from '../../data/actions';
+import {secretSantaActions} from 'data/actions';
 
 class ControlCenter extends Component {
     constructor(props) {

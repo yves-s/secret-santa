@@ -1,9 +1,9 @@
 import request from 'superagent'
 
-import {ACTIONS_SECRET_SANTA} from '../../config/actionConstants';
+import {ACTIONS_SECRET_SANTA} from 'config/actionConstants';
 
 const API_URL = 'https://projects.yslch.de/wichtel/sendWichtel.php';
-const API_URL_DEV = 'https://projects.yslch.de/wichtel/sendWichtel.php';
+const API_URL_DEV = 'http://projects.yslch.de:8888/wichtel/sendWichtel.php';
 
 const dataService = store => next => action => {
     /*

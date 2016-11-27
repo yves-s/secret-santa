@@ -1,4 +1,4 @@
-import {ACTIONS_SECRET_SANTA} from '../../config/actionConstants';
+import {ACTIONS_SECRET_SANTA} from 'config/actionConstants';
 
 export default (state = [], action) => {
     switch (action.type) {

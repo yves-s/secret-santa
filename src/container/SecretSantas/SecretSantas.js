@@ -3,8 +3,8 @@ import {connect} from 'react-redux';
 
 import {Row} from 'react-bootstrap';
 
-import {secretSantaActions} from '../../data/actions';
-import {SecretSanta} from '../../ui';
+import {secretSantaActions} from 'data/actions';
+import {SecretSanta} from 'ui';
 
 class SecretSantas extends Component {
     constructor(props) {
