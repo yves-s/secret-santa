@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 
-import {Row} from 'react-bootstrap';
+import {Row, Col} from 'react-bootstrap';
 
 import {secretSantaActions} from 'data/actions';
 import {SecretSanta} from 'ui';
@@ -15,15 +15,21 @@ class SecretSantas extends Component {
         return(
             <Row>
                 {this.props.secretSantas.map((secretSanta, index) => {
+                    console.log(secretSanta);
                     return (
-                        <SecretSanta
+                        <Col
                             key={index}
-                            id={index}
-                            name={secretSanta.name}
-                            email={secretSanta.email}
-                            delete={this.props.deleteSecretSanta}
-                            toggleEdit={this.props.toggleEditSecretSanta}
-                        />
+                            xs={12}
+                            sm={4}
+                        >
+                            <SecretSanta
+                                id={index}
+                                name={secretSanta.name}
+                                email={secretSanta.email}
+                                delete={this.props.deleteSecretSanta}
+                                toggleEdit={this.props.toggleEditSecretSanta}
+                            />
+                        </Col>
                     )
                 })}
             </Row>
