@@ -26,7 +26,6 @@ export default (state = [], action) => {
                     action.secretSanta
                 );
             });
-            return state;
         case ACTIONS_SECRET_SANTA.DELETE:
             return [
                 ...state.slice(0, action.id),
@@ -43,9 +42,6 @@ export default (state = [], action) => {
                     editing: !secretSanta.editing
                 };
             });
-        case ACTIONS_SECRET_SANTA.SEND_SUCCESS:
-            return action.data;
-            return state;
         default:
             return state;
     }

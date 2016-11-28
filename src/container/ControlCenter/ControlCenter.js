@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 
-import {Grid} from 'react-bootstrap';
-import AppBar from 'react-toolbox/lib/app_bar';
+import {Grid, Row, Col} from 'react-bootstrap';
+import {AppBar} from 'react-toolbox';
 
 import {SecretSantaCreator, Sender} from 'ui'
 import SecretSantas from 'container/SecretSantas/SecretSantas';
@@ -27,7 +27,18 @@ class ControlCenter extends Component {
             <div>
                 <AppBar flat title="Secret Santa Control Center"/>
                 <Grid>
+                    <Row>
+                        <Col xs={12}>
+                            <h2><small>Absender</small></h2>
+                        </Col>
+                    </Row>
                     <Sender onSubmit={this.sendSecretSantas.bind(this)} />
+                    <Row>
+                        <Col xs={12}>
+                            <h2><small>Wichtel</small></h2>
+                            <span>Füge so viele Wichtel hinzu wie du benötigst</span>
+                        </Col>
+                    </Row>
                     <SecretSantaCreator onSubmit={this.submitSecretSanta.bind(this)} />
                     <SecretSantas />
                 </Grid>
@@ -38,7 +49,8 @@ class ControlCenter extends Component {
 
 const mapStateToProps = (state) => {
     return {
-        secretSantas: state.secretSantas
+        secretSantas: state.secretSantas,
+        sendProcess: state.sendProcess
     };
 };
 

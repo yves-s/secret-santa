@@ -1,8 +1,7 @@
 import React from 'react';
 
 import {Field, reduxForm} from 'redux-form';
-import Input from 'react-toolbox/lib/input';
-import {Button} from 'react-toolbox/lib/button';
+import {Button, Input} from 'react-toolbox';
 import {Row, Col} from 'react-bootstrap';
 
 import button from './button.scss';
@@ -40,11 +39,6 @@ const Sender = (props) => {
 
     return(
         <div>
-            <Row>
-                <Col xs={12}>
-                    <h2><small>Absender</small></h2>
-                </Col>
-            </Row>
             <form onSubmit={submit}>
                 <Button theme={button} disabled={invalid || submitting} icon='send' floating accent/>
                 <Row>
