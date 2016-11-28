@@ -45,6 +45,7 @@ export default (state = [], action) => {
             });
         case ACTIONS_SECRET_SANTA.SEND_SUCCESS:
             return action.data;
+            return state;
         default:
             return state;
     }
