@@ -8,7 +8,7 @@ import button from './button.scss';
 
 const validate = values => {
     const errors = {};
-    const requiredFields = ['name', 'email'];
+    const requiredFields = [];
     requiredFields.forEach(field => {
         if (!values[ field ]) {
             errors[ field ] = 'Required'
@@ -42,13 +42,10 @@ const Sender = (props) => {
             <form onSubmit={submit}>
                 <Button theme={button} disabled={invalid || submitting} icon='send' floating accent/>
                 <Row>
-                    <Col xs={12} sm={4}>
-                        <Field component={renderInput} type='email' label='E-Mail' name='email'/>
-                    </Col>
-                    <Col xs={12} sm={4}>
+                    <Col xs={12} sm={6}>
                         <Field component={renderInput} type='text' label='Name' name='name'/>
                     </Col>
-                    <Col xs={12} sm={4}>
+                    <Col xs={12} sm={6}>
                         <Field component={renderInput} type='text' label='Nachricht' name='message'/>
                     </Col>
                 </Row>
