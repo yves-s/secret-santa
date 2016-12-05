@@ -8,14 +8,17 @@ import Button from 'react-toolbox/lib/button';
 const validate = values => {
     const errors = {};
     const requiredFields = ['name', 'email'];
+
     requiredFields.forEach(field => {
         if (!values[ field ]) {
             errors[ field ] = 'Required'
         }
     });
+
     if (values.email && !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(values.email)) {
         errors.email = 'Invalid email address'
     }
+
     return errors
 };
 
@@ -40,10 +43,10 @@ const SecretSantaCreator = (props) => {
         <form onSubmit={submit}>
             <Row className="show-grid">
                 <Col xs={12} sm={5}>
-                    <Field component={renderInput} name='name' label="Name" />
+                    <Field component={renderInput} type="text" name='name' label="Name" />
                 </Col>
                 <Col xs={12} sm={5}>
-                    <Field component={renderInput} name='email' label="E-Mail" />
+                    <Field component={renderInput} type="email" name='email' label="E-Mail" />
                 </Col>
                 <Col xs={12} sm={2}>
                     <Button disabled={invalid || submitting} icon='add' floating />
