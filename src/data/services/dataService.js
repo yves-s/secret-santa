@@ -3,7 +3,7 @@ import request from 'superagent'
 import {ACTIONS_SECRET_SANTA} from 'config/actionConstants';
 
 const API_URL = 'https://projects.yslch.de/wichtel/sendWichtel.php';
-const API_URL_DEV = 'http://projects.yslch.de:8888/wichtel/sendWichtel.php';
+const API_URL_DEV = 'http://secretsanta.dev:8888/wichtel/sendWichtel.php';
 
 const dataService = store => next => action => {
     next(action);
@@ -19,11 +19,11 @@ const dataService = store => next => action => {
                 .set('Content-Type', 'application/json')
                 .send(data)
                 .end((err, res) => {
-                    console.log('END', err, JSON.parse(res.text));
                     if (err) {
                         return next({
                             type: ACTIONS_SECRET_SANTA.SEND_ERROR,
-                            err
+                            sendError: err,
+                            sendSuccess: false
                         })
                     }
 
@@ -31,7 +31,8 @@ const dataService = store => next => action => {
 
                     next({
                         type: ACTIONS_SECRET_SANTA.SEND_SUCCESS,
-                        secretSantas: response.data
+                        sendError: false,
+                        sendSuccess: true
                     })
                 });
             break;
