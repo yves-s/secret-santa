@@ -1,6 +1,6 @@
-import {SecretSanta} from './SecretSanta/SecretSanta';
-import SecretSantaCreator from './SecretSantaCreator/SecretSantaCreator';
-import Sender from './Sender/Sender';
+import SecretSanta from './secretSanta/SecretSanta';
+import SecretSantaCreator from './secretSantaCreator/SecretSantaCreator';
+import Sender from './sender/Sender';
 
 export {
     SecretSantaCreator,

@@ -3,7 +3,7 @@ import {Card, CardTitle, CardActions, Button} from 'react-toolbox';
 
 import theme from './CardTitle.scss';
 
-export const SecretSanta = (props) => {
+const SecretSanta = (props) => {
     const onDelete = () => {
         props.delete(props.id);
     };
@@ -39,3 +39,5 @@ export const SecretSanta = (props) => {
         </Card>
     );
 };
+
+export default SecretSanta;
