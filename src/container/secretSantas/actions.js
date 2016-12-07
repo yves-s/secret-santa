@@ -1,22 +1,22 @@
-import {ACTIONS_SECRET_SANTA} from 'config/actionConstants';
+import * as sS from './actionTypes';
 
 export const  updateSecretSanta = (secretSanta) => {
     return {
-        type: ACTIONS_SECRET_SANTA.UPDATE,
+        type: sS.UPDATE,
         secretSanta: secretSanta
     }
 };
 
 export const deleteSecretSanta = (id) => {
     return {
-        type: ACTIONS_SECRET_SANTA.DELETE,
+        type: sS.DELETE,
         id: id
     }
 };
 
 export const toggleEditSecretSanta = (id) => {
     return {
-        type: ACTIONS_SECRET_SANTA.TOGGLE_EDIT,
+        type: sS.TOGGLE_EDIT,
         id: id
     }
 };
