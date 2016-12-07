@@ -2,18 +2,6 @@ import {ACTIONS_SECRET_SANTA} from 'config/actionConstants';
 
 export default (state = [], action) => {
     switch (action.type) {
-        case ACTIONS_SECRET_SANTA.CREATE:
-            return [
-                ...state,
-                Object.assign(
-                    {},
-                    action.secretSanta,
-                    {
-                        editing: false,
-                        id: state.length
-                    }
-                )
-            ];
         case ACTIONS_SECRET_SANTA.UPDATE:
             return state.map((secretSanta) => {
                 if(secretSanta.id !== action.secretSanta.id) {
