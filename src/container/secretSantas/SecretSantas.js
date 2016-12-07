@@ -38,7 +38,7 @@ class SecretSantas extends Component {
 }
 
 const mapStateToProps = (state) => {
-    console.log('STATE', state);
+    console.log('SECRET SANTAS', state);
     return {
         secretSantas: state.secretSantas
     };

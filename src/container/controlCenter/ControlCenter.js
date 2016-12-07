@@ -6,7 +6,8 @@ import {AppBar} from 'react-toolbox';
 import {SecretSantaCreator, Sender} from 'ui'
 import SecretSantas from 'container/SecretSantas/SecretSantas';
 
-import * as controlCenterActions from './actions';
+import controlCenter from 'container/controlCenter';
+import secretSantas from 'container/secretSantas';
 
 class ControlCenter extends Component {
     constructor(props) {
@@ -47,7 +48,6 @@ class ControlCenter extends Component {
 }
 
 const mapStateToProps = (state) => {
-    console.log(state);
     return {
         secretSantas: state.secretSantas,
         sendProcess: state.sendProcess
@@ -56,8 +56,8 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        createSecretSanta: secretSanta => dispatch(controlCenterActions.createSecretSanta(secretSanta)),
-        sendSecretSantas: sender => dispatch(controlCenterActions.sendSecretSantas(sender))
+        createSecretSanta: secretSanta => dispatch(secretSantas.actions.createSecretSanta(secretSanta)),
+        sendSecretSantas: sender => dispatch(controlCenter.actions.sendSecretSantas(sender))
     };
 };
 
