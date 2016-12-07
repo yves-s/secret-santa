@@ -1,8 +1,21 @@
-import {ACTIONS_SECRET_SANTA} from 'config/actionConstants';
+import * as sS from './actionTypes';
 
 export default (state = [], action) => {
     switch (action.type) {
-        case ACTIONS_SECRET_SANTA.UPDATE:
+        case sS.CREATE:
+            console.log(sS.CREATE, action);
+            return [
+                ...state,
+                Object.assign(
+                    {},
+                    action.secretSanta,
+                    {
+                        editing: false,
+                        id: state.length
+                    }
+                )
+            ];
+        case sS.UPDATE:
             return state.map((secretSanta) => {
                 if(secretSanta.id !== action.secretSanta.id) {
                     return secretSanta;
@@ -14,12 +27,13 @@ export default (state = [], action) => {
                     action.secretSanta
                 );
             });
-        case ACTIONS_SECRET_SANTA.DELETE:
+        case sS.DELETE:
+            console.log(sS.DELETE, state);
             return [
                 ...state.slice(0, action.id),
                 ...state.slice(action.id + 1)
             ];
-        case ACTIONS_SECRET_SANTA.TOGGLE_EDIT:
+        case sS.TOGGLE_EDIT:
             return state.map((secretSanta) => {
                 if(secretSanta.id !== action.id) {
                     return secretSanta;

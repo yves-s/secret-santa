@@ -3,7 +3,7 @@ import {connect} from 'react-redux';
 
 import {Row, Col} from 'react-bootstrap';
 
-import {secretSantaActions} from 'data/actions';
+import secretSantas from 'container/secretSantas';
 import {SecretSanta} from 'ui';
 
 class SecretSantas extends Component {
@@ -38,6 +38,7 @@ class SecretSantas extends Component {
 }
 
 const mapStateToProps = (state) => {
+    console.log('SECRET SANTAS', state);
     return {
         secretSantas: state.secretSantas
     };
@@ -45,9 +46,9 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        updateSecretSanta: secretSanta => dispatch(secretSantaActions.updateSecretSanta(secretSanta)),
-        deleteSecretSanta: id => dispatch(secretSantaActions.deleteSecretSanta(id)),
-        toggleEditSecretSanta: id => dispatch(secretSantaActions.toggleEditSecretSanta(id))
+        updateSecretSanta: secretSanta => dispatch(secretSantas.actions.updateSecretSanta(secretSanta)),
+        deleteSecretSanta: id => dispatch(secretSantas.actions.deleteSecretSanta(id)),
+        toggleEditSecretSanta: id => dispatch(secretSantas.actions.toggleEditSecretSanta(id))
     };
 };
 

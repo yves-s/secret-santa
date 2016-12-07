@@ -1,5 +1,5 @@
-import ControlCenter from './ControlCenter/ControlCenter';
-import SecretSantas from './SecretSantas/SecretSantas';
+import ControlCenter from './controlCenter/ControlCenter';
+import SecretSantas from './secretSantas/SecretSantas';
 
 export {
     ControlCenter,

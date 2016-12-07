@@ -1,5 +1,5 @@
 import {createStore, applyMiddleware} from 'redux';
-import rootReducer from 'data/reducers';
+import rootReducer from 'container/rootReducer';
 
 import {dataService} from 'data/services';
 

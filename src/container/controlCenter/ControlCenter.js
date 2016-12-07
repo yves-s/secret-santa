@@ -1,13 +1,13 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
-
 import {Grid, Row, Col} from 'react-bootstrap';
 import {AppBar} from 'react-toolbox';
 
 import {SecretSantaCreator, Sender} from 'ui'
 import SecretSantas from 'container/SecretSantas/SecretSantas';
 
-import {secretSantaActions} from 'data/actions';
+import controlCenter from 'container/controlCenter';
+import secretSantas from 'container/secretSantas';
 
 class ControlCenter extends Component {
     constructor(props) {
@@ -56,8 +56,8 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        createSecretSanta: secretSanta => dispatch(secretSantaActions.createSecretSanta(secretSanta)),
-        sendSecretSantas: sender => dispatch(secretSantaActions.sendSecretSantas(sender))
+        createSecretSanta: secretSanta => dispatch(secretSantas.actions.createSecretSanta(secretSanta)),
+        sendSecretSantas: sender => dispatch(controlCenter.actions.sendSecretSantas(sender))
     };
 };
 
