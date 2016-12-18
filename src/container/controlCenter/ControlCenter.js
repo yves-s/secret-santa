@@ -22,7 +22,7 @@ class ControlCenter extends Component {
     }
 
     hideSnackbar() {
-        this.props.controlCenter.sendSuccess = false;
+        this.props.hideSnackbar();
     }
 
     render() {
@@ -45,7 +45,6 @@ class ControlCenter extends Component {
                     <SecretSantaCreator onSubmit={this.submitSecretSanta.bind(this)} />
                     <SecretSantas />
                     <Snackbar
-                        action='Dismiss'
                         active={this.props.controlCenter.sendSuccess}
                         label='Deine Nachricht wurde erfolgreich versand'
                         timeout={2000}
@@ -68,7 +67,8 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
     return {
         createSecretSanta: secretSanta => dispatch(secretSantas.actions.createSecretSanta(secretSanta)),
-        sendSecretSantas: sender => dispatch(sendService.actions.send(sender))
+        sendSecretSantas: sender => dispatch(sendService.actions.send(sender)),
+        hideSnackbar: () => dispatch(controlCenter.actions.hideSnackbar())
     };
 };
 

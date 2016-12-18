@@ -15,3 +15,11 @@ export const sendError = (response) => {
         sendSuccess: false
     }
 };
+
+export const hideSnackbar = (response) => {
+    return {
+        type: cC.SEND_ERROR,
+        sendError: true,
+        sendSuccess: false
+    }
+};
