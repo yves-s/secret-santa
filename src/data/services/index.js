@@ -1,4 +1,4 @@
-import sendService from './sendService';
+import sendService from './sendService/';
 
 export {
     sendService

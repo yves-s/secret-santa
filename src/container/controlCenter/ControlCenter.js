@@ -1,13 +1,12 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import {Grid, Row, Col} from 'react-bootstrap';
-import {AppBar} from 'react-toolbox';
+import {AppBar, Snackbar} from 'react-toolbox';
 
 import {SecretSantaCreator, Sender} from 'ui'
+import {controlCenter, secretSantas} from 'container';
+import {sendService} from 'data/services';
 import SecretSantas from 'container/SecretSantas/SecretSantas';
-
-import controlCenter from 'container/controlCenter';
-import secretSantas from 'container/secretSantas';
 
 class ControlCenter extends Component {
     constructor(props) {
@@ -20,6 +19,10 @@ class ControlCenter extends Component {
 
     sendSecretSantas(input) {
         this.props.sendSecretSantas(input);
+    }
+
+    hideSnackbar() {
+        this.props.controlCenter.sendSuccess = false;
     }
 
     render() {
@@ -41,6 +44,14 @@ class ControlCenter extends Component {
                     </Row>
                     <SecretSantaCreator onSubmit={this.submitSecretSanta.bind(this)} />
                     <SecretSantas />
+                    <Snackbar
+                        action='Dismiss'
+                        active={this.props.controlCenter.sendSuccess}
+                        label='Deine Nachricht wurde erfolgreich versand'
+                        timeout={2000}
+                        onTimeout={this.hideSnackbar.bind(this)}
+                        type='cancel'
+                    />
                 </Grid>
             </div>
         );
@@ -50,14 +61,14 @@ class ControlCenter extends Component {
 const mapStateToProps = (state) => {
     return {
         secretSantas: state.secretSantas,
-        sendProcess: state.sendProcess
+        controlCenter: state.controlCenter
     };
 };
 
 const mapDispatchToProps = (dispatch) => {
     return {
         createSecretSanta: secretSanta => dispatch(secretSantas.actions.createSecretSanta(secretSanta)),
-        sendSecretSantas: sender => dispatch(controlCenter.actions.sendSecretSantas(sender))
+        sendSecretSantas: sender => dispatch(sendService.actions.send(sender))
     };
 };
 

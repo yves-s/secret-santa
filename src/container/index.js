@@ -1,7 +1,7 @@
-import ControlCenter from './controlCenter/ControlCenter';
-import SecretSantas from './secretSantas/SecretSantas';
+import controlCenter from './controlCenter';
+import secretSantas from './secretSantas';
 
 export {
-    ControlCenter,
-    SecretSantas
+    controlCenter,
+    secretSantas
 }

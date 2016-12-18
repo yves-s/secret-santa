@@ -15,7 +15,6 @@ class SecretSantas extends Component {
         return(
             <Row>
                 {this.props.secretSantas.map((secretSanta, index) => {
-                    console.log(secretSanta);
                     return (
                         <Col
                             key={index}
@@ -38,7 +37,6 @@ class SecretSantas extends Component {
 }
 
 const mapStateToProps = (state) => {
-    console.log('SECRET SANTAS', state);
     return {
         secretSantas: state.secretSantas
     };

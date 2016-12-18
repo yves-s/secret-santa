@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 
-import {ControlCenter} from './container';
+import ControlCenter from 'container/controlCenter/ControlCenter';
 
 class App extends Component {
     render() {
