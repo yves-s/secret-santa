@@ -1,5 +1,5 @@
-import dataService from './dataService';
+import sendService from './sendService';
 
 export {
-    dataService
+    sendService
 };

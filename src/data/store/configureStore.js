@@ -1,8 +1,8 @@
 import {createStore, applyMiddleware} from 'redux';
 import rootReducer from 'container/rootReducer';
 
-import {dataService} from 'data/services';
+import {sendService} from 'data/services';
 
 export default (initialState) => {
-    return createStore(rootReducer, initialState, applyMiddleware(dataService));
+    return createStore(rootReducer, initialState, applyMiddleware(sendService));
 }

@@ -5,7 +5,7 @@ import {ACTIONS_SECRET_SANTA} from 'config/actionConstants';
 const API_URL = 'https://projects.yslch.de/wichtel/sendWichtel.php';
 const API_URL_DEV = 'http://secretsanta.dev:8888/wichtel/sendWichtel.php';
 
-const dataService = store => next => action => {
+const sendService = store => next => action => {
     next(action);
     switch (action.type) {
         case ACTIONS_SECRET_SANTA.SEND:
@@ -41,4 +41,4 @@ const dataService = store => next => action => {
     }
 };
 
-export default dataService
+export default sendService;
